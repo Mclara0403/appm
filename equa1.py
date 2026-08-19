@@ -15,7 +15,7 @@ st.set_page_config(
 PASTA_APP = Path(__file__).parent
 
 # Caminho da imagem
-CAMINHO_LOGO = PASTA_APP / "mat.jpeg"
+CAMINHO_LOGO = PASTA_APP / "FOTOCLARA.png"
 
 # Exibe a imagem, se existir
 if CAMINHO_LOGO.exists():
@@ -27,7 +27,7 @@ if CAMINHO_LOGO.exists():
             use_container_width=True
         )
 else:
-    st.warning("A imagem mat.jpeg não foi encontrada. ⚠️")
+    st.warning("A imagem FOTOCLARA.png não foi encontrada. ⚠️")
 
 
 # Título
