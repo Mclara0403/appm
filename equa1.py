@@ -1,4 +1,3 @@
-
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
@@ -10,6 +9,50 @@ st.set_page_config(
     page_icon="📈",
     layout="centered"
 )
+
+# =========================
+# FUNDO ROSA
+# =========================
+st.markdown("""
+<style>
+
+.stApp {
+    background-color: #FFC0CB;
+}
+
+/* Títulos e textos */
+h1, h2, h3, p, label, .stMarkdown {
+    color: #5A0033 !important;
+}
+
+/* Caixa dos campos */
+div[data-baseweb="input"] {
+    background-color: #FFE4EC;
+    border-radius: 10px;
+}
+
+/* Botão */
+.stButton > button {
+    background-color: #FF69B4;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.stButton > button:hover {
+    background-color: #FF1493;
+    color: white;
+}
+
+/* Linha divisória */
+hr {
+    border-color: #FF69B4;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
 
 # Caminho da pasta do aplicativo
 PASTA_APP = Path(__file__).parent
@@ -136,10 +179,15 @@ if st.button("Calcular", use_container_width=True):
             figsize=(8, 5)
         )
 
+        # Fundo do gráfico
+        fig.patch.set_facecolor("#FFE4EC")
+        ax.set_facecolor("#FFF0F5")
+
         # Linha da função
         ax.plot(
             x,
             y,
+            color="#FF1493",
             linewidth=2,
             label=f"y = {a}x + {b}"
         )
@@ -191,4 +239,3 @@ st.divider()
 st.caption(
     "Calculadora de Equação do 1º Grau 📚"
 )
-
